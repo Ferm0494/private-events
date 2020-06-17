@@ -1,0 +1,10 @@
+
+
+<% if logged_in? %>
+<%= render 'index_log' %>
+<%else%>
+<h1  class="display-1 "> Plan an event!</h1>
+<%= link_to "Sign up", signup_path %>
+<%= link_to "Log in", login_path  %>
+
+<%end%>

@@ -1,0 +1,5 @@
+<h2> Create new User</h2>
+<%= bootstrap_form_with(model: @user) do |f| %>
+  <%= f.text_field :username %>
+  <%= f.submit "Create account" %>
+<% end %>
