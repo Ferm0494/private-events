@@ -1,0 +1,8 @@
+<h1>Create a new event</h1>
+<%= bootstrap_form_for(@event, inline_errors: true, url: new_event_path) do |f| %>
+  <%= f.text_field :title %>
+   <%= f.text_field :location %>
+    <%= f.text_field :description %>
+     <%= f.date_field :date %>
+  <%= f.submit "Create event" %>
+<% end %>

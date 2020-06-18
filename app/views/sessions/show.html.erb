@@ -1,5 +1,6 @@
 
 
+
 <% if logged_in? %>
 <%= render 'index_log' %>
 <%else%>
@@ -8,3 +9,5 @@
 <%= link_to "Log in", login_path  %>
 
 <%end%>
+
+<%= link_to "See all Events", events_path %>

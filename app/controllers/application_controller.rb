@@ -6,13 +6,10 @@ class ApplicationController < ActionController::Base
     end
 
     def authenticate
-       if logged_in?
-        redirect_to root
-       else
+       if !logged_in?
         flash[:error]= "Please Log-in"
         redirect_to login_path
        end
-        
     end
 
     def logged_in?

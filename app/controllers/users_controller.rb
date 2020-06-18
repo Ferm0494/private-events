@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     before_action :authenticate, only: [:show]
-    before_action :redirecting, only:[:create, :new]
+    before_action :redirecting, only: [:new, :create]
   def new
     @user = User.new
   end
@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(session[:id])
   end
 
   

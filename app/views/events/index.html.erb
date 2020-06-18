@@ -1,0 +1,15 @@
+<h2>Index page of events!</h2>
+<h4>Upcoming Events!</h4>
+<% @events.recent_events.find_each do |e| %>
+
+<%=link_to e.title, event_path(e.id)  %>
+
+<% end %>
+
+<h5>Past Events</h5>
+
+<% @events.expired_events.find_each do |e| %>
+
+<%=link_to e.title, event_path(e.id)  %>
+
+<% end %>

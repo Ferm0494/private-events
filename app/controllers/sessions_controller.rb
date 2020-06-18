@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :redirecting, only:[:create, :new]
+  before_action :redirecting, only: [:new, :create]
   def new
     @user = User.new
   end
