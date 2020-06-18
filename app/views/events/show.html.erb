@@ -1,11 +1,18 @@
 <h2>Event <%= @event.title %></h2>
 <p>Created by :  <%= @event.creator.username %></p>
-<p>Location: <%= event.location %></p>
-<p> When: <%= event.date %></p>
+<p>Location: <%= @event.location %></p>
+<p> When: <%= @event.date %></p>
 
+ <%if logged_in? %>
+<% if  attending_already?(@event)%>
+        <%= link_to "Attend", event_event_attendees_path(@event.id), method: :create %>
+    <%else%>
+  <%= link_to "Cancel ", event_event_attendees_path(@event.id), method: :delete %>
+<% end  %>
+ <% end %>
 <h3>Who is going?</h3>
 <ul>
-<% @event.attendees.username do |u| %>
+<% @event.attendees.find_each do |u| %>
     <li><%= u.username %> </li>
 <% end %>
 </ul>

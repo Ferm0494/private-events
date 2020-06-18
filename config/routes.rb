@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
  
+  # post '/event_attendees/:id' => "event_attendees#create"
+  # delete '/event_attendees/:id'  => "event_attendees#destroy"
   # get 'events/new' => "events#new"
   # get '/events'=> "events#index"
   # get '/events/:id' => "events#show"
 
-  resources :events, only: [:new,:index, :show]
+  resources :events, only: [:new,:index, :show] do
+     post '/event_attendees' => "event_attendees#create"
+     delete '/event_attendees'  => "event_attendees#destroy"
+  end
   post '/events/new' => "events#create"
   get '/login' => "sessions#new"
   post '/login' => "sessions#create"
