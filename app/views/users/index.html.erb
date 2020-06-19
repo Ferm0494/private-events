@@ -1,0 +1,31 @@
+<div class="container  rounded mt-4 shadow-lg bg-dark p-4">
+<h2 class="display-3 text-warning"> All users!</h2>
+
+
+<table class="table table-dark table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center">User</th>
+      <th scope="col" class="text-center">Events Created:</th>
+      <th scope="col" class="text-center">Events Attended</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+ <% @users.each do |u|  %>
+
+ <tr class="text-center">
+      <td><%= link_to u.username, show_user_path(u), class: "text-white"  %> </td>
+      <td><%= u.created_events.count %></td>
+      <td> <%= u.attending_events.count %></td>
+</tr>
+   
+<%end%>
+
+</tbody>
+</table>
+
+<%= will_paginate @users , class: "text-white text-center"%>
+
+ </div>

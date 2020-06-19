@@ -1,5 +1,10 @@
-<h2> Create new User</h2>
-<%= bootstrap_form_with(model: @user) do |f| %>
+
+<div class="medium-container d-flex align-items-center">
+<div class="container w-25 bg-dark rounded shadow-lg p-4">
+<h1 class="text-white">Create a new User</h1>
+<%= bootstrap_form_for(@user, inline_errors: true, url: users_path, html: {class: "text-white font-weight-bold"}) do |f| %>
   <%= f.text_field :username %>
-  <%= f.submit "Create account" %>
+<%= f.submit "Create Account", class: "btn btn-warning" %>
 <% end %>
+</div>
+</div>

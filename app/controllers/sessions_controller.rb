@@ -1,13 +1,17 @@
 class SessionsController < ApplicationController
   before_action :redirecting, only: [:new, :create]
+  
+  
+ 
   def new
-    @user = User.new
+    @user = User.new  
   end
 
   def create
     @user = User.find_by( sanit_params_user)
-    if @user.nil?
-      flash[:error] = "Username not found"
+    if  @user.nil?
+      @user = User.new
+      @user.errors.add(:username,"Invalid Try again!")
       render :new
     else
       session[:id] = @user.id

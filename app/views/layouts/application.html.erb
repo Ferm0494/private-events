@@ -6,6 +6,12 @@
   </head>
 
   <body>
+  <% if logged_in? %>
+  <%= render 'shared/nav_logged' %>
+  <%else%>
+  <%= render 'shared/nav_notlogged' %>
+
+  <%end%>
     <%= yield %>
   </body>
 </html>

@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   delete '/login' => "sessions#destroy"
   get '/signup' => "users#new" 
   post '/signup'=> "users#create", as: "users"
-  get '/user' => "users#show", as:"show_user"
+  get '/user' => "users#show", as:"show_profile"
+  get '/user/:id'=> "users#show",as: "show_user"
+  get '/users'=> "users#index", as: "show_users"
   root  "sessions#show"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

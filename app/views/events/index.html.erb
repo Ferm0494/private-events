@@ -1,15 +1,59 @@
-<h2>Index page of events!</h2>
-<h4>Upcoming Events!</h4>
+<div class="container  rounded mt-4 shadow-lg bg-dark p-4">
+<h2 class="display-3 text-warning">Index page of events!</h2>
+
+<table class="table table-dark table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center">Event</th>
+      <th scope="col" class="text-center">Hosted</th>
+      <th scope="col" class="text-center">When</th>
+    </tr>
+  </thead>
+  <tbody>
+<h2 class="text-warning">Upcoming Events!</h2>
+
+
 <% @events.recent_events.find_each do |e| %>
 
-<%=link_to e.title, event_path(e.id)  %>
-
+<tr class="text-center">
+      <td><%= link_to e.title, event_path(e.id), class: "text-white " %></td>
+      <td><%= e.creator.username %></td>
+      <td> <%= e.date %></td>
+</tr>
 <% end %>
 
-<h5>Past Events</h5>
+
+</tbody>
+</table>
+
+<%= will_paginate @users , class: "text-white text-center"%>
+
+<table class="table table-dark table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center">Event</th>
+      <th scope="col" class="text-center">Hosted</th>
+      <th scope="col" class="text-center">When</th>
+    </tr>
+  </thead>
+  <tbody>
+
+<h2 class="text-warning">Past Events</h2>
 
 <% @events.expired_events.find_each do |e| %>
 
-<%=link_to e.title, event_path(e.id)  %>
+<tr class="text-center">
+      <td><%= link_to e.title, event_path(e.id), class: "text-white " %></td>
+      <td><%= e.creator.username %></td>
+      <td> <%= e.date %></td>
+</tr>
 
 <% end %>
+
+</tbody>
+</table>
+
+<%= will_paginate @users , class: "text-white text-center"%>
+
+
+</div>

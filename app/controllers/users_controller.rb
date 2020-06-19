@@ -11,12 +11,22 @@ class UsersController < ApplicationController
         session[:id] = @user.id
         redirect_to root_path
     else
-        flash[:error]= "User already exist !" 
+        render :new
     end
   end
 
   def show
-    @user = User.find(session[:id])
+    if !params[:id].nil?
+        @user = User.find(params[:id])
+    else
+        @user = User.find(session[:id])
+    end
+    User.paginate(page: params[:page], per_page: 5)
+    
+  end
+
+  def index
+    @users = User.paginate(page: params[:page], per_page: 5)
   end
 
   

@@ -1,13 +1,13 @@
 
+<div class="container mt-4">
+<div class="jumbotron bg-dark shadow-lg">
+    <h1 class="display-3 text-white">Plan an event! </h1>
+    <h3 class="text-white"><%= logged_in? ? current_user.username : "Join now to create events!" %></h3>
+    <hr class="my-2 border-info">
+    <p class="lead">
+        <%= logged_in? ?  link_to("Create an event", new_event_path,class: "btn btn-warning w-25 py-2") :
+           link_to("Log in", login_path, class: "btn btn-warning w-25 py-2") %>
+    </p>
+</div>
+</div>
 
-
-<% if logged_in? %>
-<%= render 'index_log' %>
-<%else%>
-<h1  class="display-1 "> Plan an event!</h1>
-<%= link_to "Sign up", signup_path %>
-<%= link_to "Log in", login_path  %>
-
-<%end%>
-
-<%= link_to "See all Events", events_path %>

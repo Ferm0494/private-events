@@ -1,7 +1,60 @@
-<h1>Events for :  <%= @user.username  %></h1>
+<div class="container  rounded mt-4 shadow-lg bg-dark p-4">
+<h2 class="display-3 text-warning"> Events for :  <%= @user.username  %></h2>
 
-<h4>Created :</h4>
- <% @user.created_events.find_each do |event| %>
-    <%= event.title %>
+<table class="table table-dark table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center">Event</th>
+      <th scope="col" class="text-center">Attending</th>
+    </tr>
+  </thead>
+  <tbody>
+<h2 class="text-warning">Created Events!</h2>
+
+ <% @user.created_events.each do |e| %>
+   <tr class="text-center">
+      <td><%= link_to e.title, event_path(e.id), class: "text-white " %></td>
+      <td><%= e.attendees.count %></td>
+</tr>
 <% end %>
 
+</tbody>
+</table>
+
+<table class="table table-dark table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center">Event</th>
+      <th scope="col" class="text-center">Attending</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+  <h2 class="text-warning">Events Attending</h2>
+<% @user.attending_events.recent_events.each do |e| %>
+    <tr class="text-center">
+      <td><%= link_to e.title, event_path(e.id), class: "text-white " %></td>
+      <td><%= e.attendees.count %></td>
+    </tr>
+<% end %>
+
+<table class="table table-dark table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center">Event</th>
+      <th scope="col" class="text-center">Attended</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+  <h2 class="text-warning">Expired Events</h2>
+<% @user.attending_events.expired_events.each do |e| %>
+    <tr class="text-center">
+      <td><%= link_to e.title, event_path(e.id), class: "text-white " %></td>
+      <td><%= e.attendees.count %></td>
+    </tr>
+<% end %>
+
+</div>

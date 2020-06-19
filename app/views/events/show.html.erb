@@ -1,18 +1,25 @@
-<h2>Event <%= @event.title %></h2>
-<p>Created by :  <%= @event.creator.username %></p>
-<p>Location: <%= @event.location %></p>
-<p> When: <%= @event.date %></p>
 
- <%if logged_in? %>
-<% if  attending_already?(@event)%>
-        <%= link_to "Attend", event_event_attendees_path(@event.id), method: :create %>
-    <%else%>
-  <%= link_to "Cancel ", event_event_attendees_path(@event.id), method: :delete %>
-<% end  %>
- <% end %>
-<h3>Who is going?</h3>
-<ul>
-<% @event.attendees.find_each do |u| %>
-    <li><%= u.username %> </li>
-<% end %>
-</ul>
+<div class="container d-flex justify-content-center mt-4 p-5">
+<div class="card w-50 bg-dark text-white">
+  <div class="card-header text-info  ">
+    Created by :  <%= @event.creator.username %>
+  </div>
+  <div class="card-body ">
+    <h4 class="card-title">Event :  <%= @event.title %></h4>
+    <p class="card-text">Location:  <b><%= @event.location %> </b> </p>
+    <%= render 'shared/confirming_event', event: @event %>
+  </div>
+  <div class="card-footer text-info">
+   When: <%= @event.date %>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+ 
