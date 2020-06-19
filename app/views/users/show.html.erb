@@ -11,7 +11,7 @@
   <tbody>
 <h2 class="text-warning">Created Events!</h2>
 
- <% @user.created_events.each do |e| %>
+ <% @created_events.each do |e| %>
    <tr class="text-center">
       <td><%= link_to e.title, event_path(e.id), class: "text-white " %></td>
       <td><%= e.attendees.count %></td>
@@ -20,6 +20,9 @@
 
 </tbody>
 </table>
+
+<%= will_paginate @created_events , class: "text-white text-center"%>
+
 
 <table class="table table-dark table-bordered">
   <thead>
@@ -32,13 +35,16 @@
 
 
   <h2 class="text-warning">Events Attending</h2>
-<% @user.attending_events.recent_events.each do |e| %>
+<% @attending_events.each do |e| %>
     <tr class="text-center">
       <td><%= link_to e.title, event_path(e.id), class: "text-white " %></td>
       <td><%= e.attendees.count %></td>
     </tr>
 <% end %>
 
+</tbody>
+</table>
+<%= will_paginate @attending_events , class: "text-white text-center"%>
 <table class="table table-dark table-bordered">
   <thead>
     <tr>
@@ -50,11 +56,16 @@
 
 
   <h2 class="text-warning">Expired Events</h2>
-<% @user.attending_events.expired_events.each do |e| %>
+<% @expired_events.each do |e| %>
     <tr class="text-center">
       <td><%= link_to e.title, event_path(e.id), class: "text-white " %></td>
       <td><%= e.attendees.count %></td>
     </tr>
 <% end %>
+
+</tbody>
+</table>
+
+<%= will_paginate @expired_events , class: "text-white text-center"%>
 
 </div>

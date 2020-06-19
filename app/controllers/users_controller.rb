@@ -21,10 +21,13 @@ class UsersController < ApplicationController
             else
               User.find(session[:id])
             end
-    User.paginate(page: params[:page], per_page: 5)
+    User.paginate(page: params[:page], per_page: 15)
+    @created_events = @user.created_events.paginate(page: params[:page], per_page: 15)
+    @attending_events = @user.attending_events.recent_events.paginate(page: params[:page], per_page: 15)
+    @expired_events = @user.attending_events.expired_events.paginate(page: params[:page], per_page: 15)
   end
 
   def index
-    @users = User.paginate(page: params[:page], per_page: 5)
+    @users = User.paginate(page: params[:page], per_page: 15)
   end
 end
