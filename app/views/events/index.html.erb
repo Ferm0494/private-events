@@ -7,18 +7,20 @@
       <th scope="col" class="text-center">Event</th>
       <th scope="col" class="text-center">Hosted</th>
       <th scope="col" class="text-center">When</th>
+      <th scope="col" class="text-center">Creator Id:</th>
     </tr>
   </thead>
   <tbody>
 <h2 class="text-warning">Upcoming Events!</h2>
 
 
-<% @events.recent_events.find_each do |e| %>
+<% @events.upcoming_events.find_each do |e| %>
 
 <tr class="text-center">
       <td><%= link_to e.title, event_path(e.id), class: "text-white " %></td>
       <td><%= e.creator.username %></td>
       <td> <%= e.date %></td>
+      <td> <%= link_to e.creator.id, show_user_path(e.creator.id), class: "text-white "   %></td>
 </tr>
 <% end %>
 
@@ -33,18 +35,20 @@
       <th scope="col" class="text-center">Event</th>
       <th scope="col" class="text-center">Hosted</th>
       <th scope="col" class="text-center">When</th>
+      <th scope="col" class="text-center">Creator Id:</th>
     </tr>
   </thead>
   <tbody>
 
 <h2 class="text-warning">Past Events</h2>
 
-<% @events.expired_events.find_each do |e| %>
+<% @events.previous_events.find_each do |e| %>
 
 <tr class="text-center">
       <td><%= link_to e.title, event_path(e.id), class: "text-white " %></td>
       <td><%= e.creator.username %></td>
       <td> <%= e.date %></td>
+      <td> <%= link_to e.creator.id, show_user_path(e.creator.id), class: "text-white "  %></td>
 </tr>
 
 <% end %>

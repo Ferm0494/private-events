@@ -6,9 +6,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(sanitize_params_event)
-    @event.creator_id = current_user.id
-
+    @event = current_user.created_events.build(sanitize_params_event)
     if @event.save
       flash[:notice] = 'Event created succesfully'
       redirect_to root_path
