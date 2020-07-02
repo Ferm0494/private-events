@@ -1,0 +1,25 @@
+
+<div class="container d-flex justify-content-center mt-4 p-5">
+<div class="card w-50 bg-dark text-white">
+  <div class="card-header text-info  ">
+    Created by :  <%= @event.creator.username %>
+  </div>
+  <div class="card-body ">
+    <h4 class="card-title">Event :  <%= @event.title %></h4>
+    <p class="card-text">Location:  <b><%= @event.location %> </b> </p>
+    <%= render 'shared/confirming_event', event: @event %>
+  </div>
+  <div class="card-footer text-info">
+   When: <%= @event.date %>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+ 

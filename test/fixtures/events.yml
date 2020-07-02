@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  location: MyString
+  description: MyString
+  date: 2020-06-17 11:54:52
+  creator_id: 1
+
+two:
+  title: MyString
+  location: MyString
+  description: MyString
+  date: 2020-06-17 11:54:52
+  creator_id: 1

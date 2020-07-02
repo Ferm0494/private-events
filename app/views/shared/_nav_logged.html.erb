@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand navbar-light bg-info d-flex justify-content-between ">
+    <div class=" nav navbar-nav">
+        <%= link_to "Home", root_path, class: "nav-item nav-link " %>
+        <%= link_to "Events", events_path, class: "nav-item nav-link" %>
+        <%= link_to "Users",show_users_path, class: "nav-item nav-link" %>
+       
+    </div>
+
+    <div class=" nav navbar-nav">
+     
+       <%= link_to "My events", show_profile_path ,class: "nav-item nav-link" %>
+        <%= link_to "Log out #{current_user.username}", login_path, method: :delete,class: "nav-item nav-link"  %> 
+    </div>
+   
+    
+</nav>

@@ -2,14 +2,16 @@
 <html>
   <head>
     <title>PrivateEvents</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= render 'layouts/conf' %>
   </head>
 
   <body>
+  <% if logged_in? %>
+  <%= render 'shared/nav_logged' %>
+  <%else%>
+  <%= render 'shared/nav_notlogged' %>
+
+  <%end%>
     <%= yield %>
   </body>
 </html>

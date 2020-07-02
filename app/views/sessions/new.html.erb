@@ -1,0 +1,12 @@
+
+
+
+<div class="medium-container d-flex align-items-center">
+<div class="container w-25 bg-dark rounded shadow-lg p-4">
+<h1 class="text-white">Log in</h1>
+<%= bootstrap_form_for(@user, inline_errors: true, url: login_path, html: {class: "text-white font-weight-bold"}) do |f| %>
+  <%= f.text_field :username %>
+<%= f.submit "Log in", class: "btn btn-warning" %>
+<% end %>
+</div>
+</div>

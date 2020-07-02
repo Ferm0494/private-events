@@ -1,24 +1,76 @@
-# README
+## Private Members
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> The purpose of this project was to learn about authentication/ and associations 
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby
+- Ruby on Rails
 
-* System dependencies
+## Getting Started
 
-* Configuration
+You will need:
+- Ruby
+- Ruby on Rails
+- Bundler
 
-* Database creation
+### Install
 
-* Database initialization
+Clone the repo
 
-* How to run the test suite
+`https://github.com/Ferm0494/private-events`
 
-* Services (job queues, cache servers, search engines, etc.)
+Install dependencies
 
-* Deployment instructions
+`bundle install`
 
-* ...
+Migrate the DB
+
+`rails db:migrate`
+
+Run the server
+
+`rails s or and go into localhost:3000`
+
+## Testing it out
+
+-To look for the cases you can check out `spec folder` 
+
+-run `rspec for tests`
+
+- Testing was created with **rspec** and **Capybara**
+
+
+
+### Live Version :eyes:
+https://private-mems94.herokuapp.com/
+
+
+## Authors
+
+
+👤 **Fernando**
+
+- Github: [@Ferm0494](https://github.com/Ferm0494)
+- Twitter: [@ferm494](https://twitter.com/ferm494)
+- Linkedin: [@Ferm0494](https://www.linkedin.com/in/ferm0494/)
+
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- The Odin Project
+- Microverse
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
