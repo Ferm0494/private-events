@@ -1,6 +1,6 @@
 ## Private Members
 
-> The purpose of this project was to learn about authentication/ and associations 
+> The purpose of this project was to learn about authentication/ and associations, so an unauthorized user can see all the events, but cant make events until he is logged in. 
 
 ## Built With
 
